@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import cab_invoice_generator.InvoiceGenerator;
 import cab_invoice_generator.Ride;
+import cab_invoice_generator.InvoiceSummary;
 
 public class CabInvoiceTest {
 
@@ -46,5 +47,19 @@ public class CabInvoiceTest {
         double fare = invoiceGenerator.calculateFareForMultipleRides(rides);
 
         assertEquals(41.0, fare, 0.01);
+    }
+
+    @Test
+    public void testGenerateSummary(){
+        Ride [] rides = {
+            new Ride(2.0,5.0),
+            new Ride(1.0, 1.0),
+            new Ride(0.2, 1.0)
+        };
+
+        InvoiceSummary summary = invoiceGenerator.generateFareSummary(rides);
+        InvoiceSummary expectedSummary = new InvoiceSummary(3.0, 41.0);
+        assertEquals(expectedSummary, summary);
+
     }
 }
