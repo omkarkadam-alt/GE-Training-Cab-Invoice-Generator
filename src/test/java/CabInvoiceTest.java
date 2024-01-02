@@ -32,5 +32,4 @@ public class CabInvoiceTest {
             double fare = invoiceGenerator.calculateFare(dist,time);
             assertEquals(5.0, fare, 0.01); 
     }
-
 }
