@@ -2,9 +2,9 @@ package cab_invoice_generator;
 
 public class InvoiceSummary {
 
-    private double numberOfFares;
-    private double totalFare;
-    private double averageFare;
+    public double numberOfFares;
+    public double totalFare;
+    public double averageFare;
 
     public InvoiceSummary(double numberOfFares, double totalFare){
         this.numberOfFares = numberOfFares;
